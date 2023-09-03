@@ -1,0 +1,14 @@
+# Use a base image with a compatible Java runtime
+FROM openjdk:11-jre-slim
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy your Java source code file into the container
+COPY LoanApplicationServer.java .
+
+# Compile your Java code inside the container
+RUN javac LoanApplicationServer.java
+
+# Define the command to run your compiled Java application
+CMD ["java", "LoanApplicationServer"]
